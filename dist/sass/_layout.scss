@@ -1,0 +1,49 @@
+@import "custom-variables";
+
+.inner{
+  height: 100vh;
+  background-image: url("../img/inner-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: $navbar-height;
+  color:#fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+  .title{
+    font-family:'montserratregular';
+  }
+  p{
+    color: rgba(255, 255, 255, .6);
+    font-size:12px;
+  }
+  .inner-title{
+    width: 100%;
+    text-align: center;
+    padding-top: 17vh;
+    .title{
+      font-size:60px;
+      margin-bottom: 2vh;
+    }
+    p{
+      font-size:18px;
+      padding: 0 5vw;
+
+    }
+    .btn{
+      margin-top: 9vh;
+    }
+  }
+  .inner-advantages{
+    padding-bottom: 6vh;
+    .col-md-4{
+      .title{
+        text-transform: uppercase;
+        margin-bottom: 30px;
+      }
+    }
+
+  }
+}

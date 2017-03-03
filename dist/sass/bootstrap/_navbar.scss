@@ -452,6 +452,9 @@
       }
     }
     @media (max-width: 768px) {
+     a{
+       font-size:16px;
+     }
       > .active > a {
         &,
         &:hover,

@@ -4072,6 +4072,8 @@ tbody.collapse.in {
   @media (max-width: 768px) {
     .navbar-default .navbar-nav {
       background-color: #fff; }
+      .navbar-default .navbar-nav a {
+        font-size: 16px; }
       .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
         color: #000000;
         background-color: transparent;

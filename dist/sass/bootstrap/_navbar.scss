@@ -57,7 +57,10 @@
   -webkit-overflow-scrolling: touch;
 
   &.in {
+    position: absolute;
     overflow-y: auto;
+    top: 80px;
+    width: 100%;
   }
 
   @media (min-width: $grid-float-breakpoint) {

@@ -6125,7 +6125,8 @@ header {
       height: auto;
       padding-bottom: 50px; } }
   .inner .title {
-    font-family: 'montserratregular'; }
+    font-family: 'montserratregular';
+    margin-top: 10px; }
   .inner p {
     color: rgba(255, 255, 255, 0.6);
     font-size: 12px; }

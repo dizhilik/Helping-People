@@ -1,17 +1,17 @@
-//
-// Navbars
-// --------------------------------------------------
+  //
+  // Navbars
+  // --------------------------------------------------
 
 
-// Wrapper and base class
-//
-// Provide a static navbar from which we expand to create full-width, fixed, and
-// other navbar variations.
+  // Wrapper and base class
+  //
+  // Provide a static navbar from which we expand to create full-width, fixed, and
+  // other navbar variations.
 
 .navbar {
   position: relative;
   min-height: $navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
-  margin-bottom: $navbar-margin-bottom;
+  margin-bottom: 0;
   border: 1px solid transparent;
 
   // Prevent floats from breaking the navbar
@@ -52,15 +52,12 @@
   padding-right: $navbar-padding-horizontal;
   padding-left:  $navbar-padding-horizontal;
   border-top: 1px solid transparent;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+  // box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
   @include clearfix;
   -webkit-overflow-scrolling: touch;
 
   &.in {
-    position: absolute;
     overflow-y: auto;
-    top: 80px;
-    width: 100%;
   }
 
   @media (min-width: $grid-float-breakpoint) {
@@ -170,9 +167,7 @@
   line-height: $line-height-computed;
   height: $navbar-height;
   text-transform: uppercase;
-  font-family:$navbar-default-brand-font-family;
-
-
+  font-family: $navbar-default-brand-font-family;
   &:hover,
   &:focus {
     text-decoration: none;
@@ -236,15 +231,15 @@
 // the nav the full height of the horizontal nav (above 768px).
 
 .navbar-nav {
-  margin: ($navbar-padding-vertical / 2) (-$navbar-padding-horizontal);
-
+  margin: 0 (-$navbar-padding-horizontal);
+  background: #fff;
   > li > a {
     padding-top:    10px;
     padding-bottom: 10px;
     line-height: $line-height-computed;
-    font-size:$navbar-default-link-font-size;
-    font-family:$navbar-default-link-font-family;
-    /*border-top: $navbar-default-link-border-width solid transparent;*/
+    font-size: $navbar-default-link-font-size;
+    font-family: $navbar-default-link-font-family;
+    border-top: $navbar-default-link-border-width solid transparent;
     padding-right: 0;
     padding-left: 0;
   }
@@ -256,8 +251,7 @@
       float: none;
       width: auto;
       margin-top: 0;
-      background-color: #fff;
-      color:#000;
+      background-color: transparent;
       border: 0;
       box-shadow: none;
       > li > a,
@@ -278,6 +272,7 @@
   @media (min-width: $grid-float-breakpoint) {
     float: left;
     margin: 0;
+    background: transparent;
 
     > li {
       float: left;
@@ -395,7 +390,7 @@
   }
   .navbar-right {
     float: right !important;
-  margin-right: -$navbar-padding-horizontal;
+    margin-right: -$navbar-padding-horizontal;
 
     ~ .navbar-right {
       margin-right: 0;
@@ -440,7 +435,7 @@
       &,
       &:hover,
       &:focus {
-        color: $navbar-default-link-active-color;
+        color: #fff;
         background-color: $navbar-default-link-active-bg;
         border-color: $navbar-default-link-border-color;
       }
@@ -451,42 +446,6 @@
       &:focus {
         color: $navbar-default-link-disabled-color;
         background-color: $navbar-default-link-disabled-bg;
-
-      }
-    }
-    @media (max-width: 768px) {
-      padding-right: 20px;
-     a{
-       text-align: right;
-       font-size:30px;
-
-     }
-      > .active > a {
-        &,
-        &:hover,
-        &:focus {
-          color: #000;
-          border: none;
-         /* background-color: $navbar-default-link-active-bg;*/
-          border-color: $navbar-default-link-border-color;
-        }
-      }
-      background-color: #fff;
-      > li > a {
-        color:#000;
-        &:hover,
-        &:focus {
-          color:  $gray-base;
-
-        }
-      }
-      > .active > a {
-        &,
-        &:hover,
-        &:focus {
-          color: $gray-dark;
-
-        }
       }
     }
   }
@@ -495,7 +454,7 @@
     border-color: $navbar-default-toggle-border-color;
     &:hover,
     &:focus {
-      background-color: /*$navbar-default-toggle-hover-bg;*/#fff;
+      background-color: $navbar-default-toggle-hover-bg;
     }
     .icon-bar {
       background-color: $navbar-default-toggle-icon-bar-bg;
@@ -514,8 +473,8 @@
       &,
       &:hover,
       &:focus {
-        background-color:$navbar-default-link-active-bg;
-        color: $navbar-default-link-active-color;
+        background-color: $navbar-default-link-active-bg;
+        // color: $navbar-default-link-active-color;
       }
     }
 
@@ -523,19 +482,19 @@
       // Dropdowns get custom display when collapsed
       .open .dropdown-menu {
         > li > a {
-          color: /*$navbar-default-link-color;*/#000;
+          color: $navbar-default-link-color;
           &:hover,
           &:focus {
-            color: $gray-base /*$navbar-default-link-hover-color*/;
-           /* background-color: $navbar-default-link-hover-bg;*/
+            color: $navbar-default-link-hover-color;
+            background-color: $navbar-default-link-hover-bg;
           }
         }
         > .active > a {
           &,
           &:hover,
           &:focus {
-            color:$gray-base /*$navbar-default-link-active-color*/;
-            /*background-color: $navbar-default-link-active-bg;*/
+            color: $navbar-default-link-active-color;
+            background-color: $navbar-default-link-active-bg;
           }
         }
         > .disabled > a {
@@ -639,7 +598,7 @@
 
   .navbar-collapse,
   .navbar-form {
-    /* border-color: darken($navbar-inverse-bg, 7%);*/
+    border-color: darken($navbar-inverse-bg, 7%);
   }
 
   // Dropdowns
@@ -663,19 +622,19 @@
           background-color: $navbar-inverse-border;
         }
         > li > a {
-          color: /*$navbar-inverse-link-color;*/ #000;
+          color: $navbar-inverse-link-color;
           &:hover,
           &:focus {
-            color: $gray-base;
-            /*background-color: $navbar-inverse-link-hover-bg*/;
+            color: $navbar-inverse-link-hover-color;
+            background-color: $navbar-inverse-link-hover-bg;
           }
         }
         > .active > a {
           &,
           &:hover,
           &:focus {
-            color: $gray-base;
-            /*background-color: $navbar-inverse-link-active-bg;*/
+            color: $navbar-inverse-link-active-color;
+            background-color: $navbar-inverse-link-active-bg;
           }
         }
         > .disabled > a {
@@ -712,3 +671,48 @@
     }
   }
 }
+
+  // navbar media
+  .navbar-default{
+    .navbar-nav{
+      li{
+        @media (max-width: 767px) {
+          text-align: right;
+          padding-right: 15px;
+          padding-left: 15px;
+        }
+        a{
+          @media (max-width: 767px) {
+            color: $gray-dark;
+            font-size: 30px;
+          }
+          &:hover,
+          &:focus {
+            @media (max-width: 767px) {
+              color: $gray-dark;
+              font-size: 30px;
+              border-bottom: 1px solid $gray-dark;
+              border-top: 1px solid $gray-dark;
+            }
+          }
+        }
+        &.active{
+          a{
+            @media (max-width: 767px) {
+              color: $gray-dark;
+              font-size: 30px;
+            }
+            &:hover,
+            &:focus {
+              @media (max-width: 767px) {
+                color: #000;
+                font-size: 30px;
+                border-bottom: 1px solid transparent;
+                border-top: 1px solid transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
